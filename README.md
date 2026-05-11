@@ -30,7 +30,7 @@ The project delivers a dashboard that synthesizes **11 North Star metrics** with
 > 
 ### Project Resources 
 * [Interactive Tableau Dashboard](https://public.tableau.com/app/profile/eda.emin/viz/ManufacturingIndustryAnalytics/ExecutiveDashboard#1)
-* [Python Code for Data Generation](link-to-be-added) 
+* [Python Code for Data Generation](https://github.com/edanemin/Manufacturing-Industry-Operation-Analytics/blob/main/python/Dataset%20creation) 
 * [Data Quality Enhancements & Summary](link-to-be-added)
 * [Descriptive Statistics](link-to-be-added) 
 * [SQL Queries for Data Manipulation](link-to-be-added)
