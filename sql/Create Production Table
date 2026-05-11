@@ -1,0 +1,37 @@
+CREATE TABLE production (
+    Transaction_ID     INTEGER PRIMARY KEY,
+    Date                DATE,
+    Shift               VARCHAR(20),
+    Machine_ID          VARCHAR(20),
+    Operator_ID         VARCHAR(20),
+    Product_Family      VARCHAR(50),
+    Target_Qty          INTEGER,
+    Produced_Qty        INTEGER,
+    Downtime_Minutes    INTEGER,
+    Defect_Count        INTEGER,
+    Scrap_Qty           INTEGER,
+    Rework_Qty          INTEGER,
+    Error_Code          VARCHAR(20),
+    Sensor_Temp_C       REAL,
+    Sensor_Vibration    REAL,
+    QC_Status           VARCHAR(20),
+    Supplier_ID         VARCHAR(20),
+    Lead_Time_Days      INTEGER,
+    Inventory_Level     INTEGER,
+    Warehouse_Zone      VARCHAR(20),
+    Cost_Per_Unit       REAL,
+    Shipping_Method     VARCHAR(30),
+    Maintenance_Due    VARCHAR(10),
+    Energy_Consumption_KWH  REAL,
+    Location            VARCHAR(50)
+);
+
+
+--To change data type of maintenance_due to boolean
+
+alter table production
+alter column maintenance_due type boolean 
+using case 
+	when maintenance_due = 'Yes' then true
+	when maintenance_due = 'No' then false
+	end;
