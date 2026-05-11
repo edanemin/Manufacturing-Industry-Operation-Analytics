@@ -1,0 +1,33 @@
+import pandas as pd
+
+file_path = '/content/Industry_Clean_Data_10k.csv' 
+
+prod_df = pd.read_csv(file_path)
+prod_df.info()
+
+#To find amount of nulls in each columns
+prod_df.isnull().sum()
+
+prod_df.describe()
+
+#To aggragate numeric columns
+numeric_cols = prod_df.select_dtypes(include=['number'])
+numeric_cols.head()
+
+#To calculate cv_percent
+cv_percent = (numeric_cols.std()/numeric_cols.mean())*100
+print(cv_percent)
+
+#To calculate skewness
+skewness = numeric_cols.skew()
+ print(skewness)
+
+#To calculate descriptive statistics and add nulls, cv_percent, skewness
+summary = numeric_cols.describe()
+summary.loc['cv%'] = (numeric_cols.std() / numeric_cols.mean()) * 100
+summary.loc['skewness'] = numeric_cols.skew()
+summary.loc['is_null'] = numeric_cols.isnull().sum()
+
+display(summary)
+
+summary.to_csv('summary_stats.csv')
