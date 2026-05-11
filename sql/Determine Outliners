@@ -1,0 +1,94 @@
+-- To make Null negative and 480< downtime minutes
+update production 
+set downtime_minutes = null 
+where downtime_minutes > 480 or downtime_minutes < 0;
+
+--To make Null error_code null string
+update production 
+set error_code = null 
+where error_code = 'null';
+
+--To identify outliners in produced_Qty
+select
+max(produced_qty) as Max,
+min(produced_qty) as Min,
+avg(produced_qty) as Avg,
+PERCENTILE_CONT(0.25) within group (order by produced_qty) as q1,
+PERCENTILE_CONT(0.50) within group (order by produced_qty) as median,
+PERCENTILE_CONT(0.75) within group (order by produced_qty) as q3
+from production;
+
+--IQR Method - produced qty
+--Q1 = 176, Q3 = 203, IQR = 27
+--Lower limit = 176 - (1.5 × 27) = 135.5
+--Upper limit = 203 + (1.5 × 27) = 243.5
+
+--Nbr of IQR effected row
+select count (*)
+from production
+where produced_qty > 243 or produced_qty > 136;
+--10,452 rows - IQR method is not applicable
+
+--To check the produced_qty value by 20 rows
+select distinct produced_qty 
+from production 
+order by produced_qty DESC 
+limit 20;
+-- Only 5,000 qty is outliner (51 rows)
+
+--To make Null produced-qty =5,000 due to low magnitude
+update production 
+set produced_qty = null
+where produced_qty = 5000;
+
+--To identify outliners in defect count
+select
+max(defect_count) as Max,
+min(defect_count) as Min,
+round(avg(defect_count),2) as Avg,
+PERCENTILE_CONT(0.25) within group (order by defect_count) as q1,
+PERCENTILE_CONT(0.50) within group (order by defect_count) as median,
+PERCENTILE_CONT(0.75) within group (order by defect_count) as q3
+from production;
+
+--IQR Method - defect count
+--Q1 = 3,  Q3 = 9,  IQR = 6
+--Lower limit = 3 - (1.5 × 6) = -6 → 0 (can't be negative)
+--Upper limit = 9 + (1.5 × 6) = 18
+
+--Nbr of rows defect count = 99
+select count (*)
+from production
+where defect_count = 99;
+--1,081 rows
+
+--To make Null defect count = 99 due to low magnitude
+update production 
+set defect_count = Null
+where defect_count = 99;
+
+--To identify outliners in sensor_temp_C
+select
+max(sensor_temp_c) as Max,
+min(sensor_temp_c) as Min,
+avg(sensor_temp_c) as Avg,
+PERCENTILE_CONT(0.25) within group (order by sensor_temp_c) as q1,
+PERCENTILE_CONT(0.50) within group (order by sensor_temp_c) as median,
+PERCENTILE_CONT(0.75) within group (order by sensor_temp_c) as q3
+from production;
+
+--IQR Method - sensor temp C
+--Q1 = 53.25,  Q3 = 79.60,  IQR = 26.35
+--Lower limit = 53.25 - (1.5 × 26.35) = 13.73
+--Upper limit = 79.60 + (1.5 × 26.35) = 119.13
+
+--Nbr of rows that sensor_temp_C is 999
+select count (*)
+from production 
+where sensor_temp_c = 999;
+-- 530 rows
+
+--To make Null sensor temp C = 999 due to low magnitude
+update production 
+set sensor_temp_c = Null
+where sensor_temp_c = 999;
