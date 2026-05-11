@@ -1,0 +1,48 @@
+#Code to create of dataset - Industrial_Dirty_Data_10k
+
+import pandas as pd
+import numpy as np
+import random
+from datetime import datetime, timedelta
+
+# Settings
+rows = 10500
+np.random.seed(42)
+
+data = {
+    'Transaction_ID': range(1, rows + 1),
+    'Date': [(datetime(2025, 1, 1) + timedelta(days=random.randint(0, 400))).strftime('%Y-%m-%d') for _ in range(rows)],
+    'Shift': [random.choice(['Morning', 'Evening', 'Night', 'Morn.', 'night']) for _ in range(rows)], # Yazım hatalı
+    'Machine_ID': [f'MAC-{random.randint(10, 25)}' for _ in range(rows)],
+    'Operator_ID': [f'OP-{random.randint(100, 150)}' for _ in range(rows)],
+    'Product_Family': [random.choice(['Turbine_Blade', 'Control_Unit', 'Inverter', 'Motor_Housing']) for _ in range(rows)],
+    'Target_Qty': [random.choice([100, 200, 500]) for _ in range(rows)],
+    'Produced_Qty': np.random.normal(190, 20, rows).astype(int),
+    'Downtime_Minutes': [random.choice([0, 5, 10, -15, 500, np.nan]) for _ in range(rows)], # Hatalı veriler
+    'Defect_Count': [random.randint(0, 10) if random.random() > 0.1 else 99 for _ in range(rows)],
+    'Scrap_Qty': [random.randint(0, 5) for _ in range(rows)],
+    'Rework_Qty': [random.randint(0, 3) for _ in range(rows)],
+    'Error_Code': [random.choice(['E01', 'E02', 'E03', 'None', 'ERR_01', 'null']) for _ in range(rows)],
+    'Sensor_Temp_C': [random.uniform(40, 90) if random.random() > 0.05 else 999 for _ in range(rows)],
+    'Sensor_Vibration': [random.uniform(0.1, 5.0) for _ in range(rows)],
+    'QC_Status': [random.choice(['Pass', 'Fail', 'Pending', 'P', 'f']) for _ in range(rows)],
+    'Supplier_ID': [f'SUP-{random.randint(1, 10)}' for _ in range(rows)],
+    'Lead_Time_Days': [random.randint(1, 30) for _ in range(rows)],
+    'Inventory_Level': [random.randint(500, 5000) for _ in range(rows)],
+    'Warehouse_Zone': [random.choice(['Zone_A', 'B', 'Zone_C', 'A', 'Z-1']) for _ in range(rows)],
+    'Cost_Per_Unit': [random.uniform(10.5, 100.0) if random.random() > 0.1 else np.nan for _ in range(rows)],
+    'Shipping_Method': [random.choice(['Sea', 'Air', 'Road']) for _ in range(rows)],
+    'Maintenance_Due': [random.choice(['Yes', 'No']) for _ in range(rows)],
+    'Energy_Consumption_kWh': [random.uniform(200, 1000) for _ in range(rows)],
+    'Location': ['Germany' if random.random() > 0.3 else 'USA' for _ in range(rows)]
+}
+
+df = pd.DataFrame(data)
+
+# Adding manual errors (Some dates are incorrectly formatted)
+df.iloc[0:50, 1] = '01/13/2025'
+df.iloc[100:150, 7] = 5000 # İmpossible production amount
+
+# Save as CSV
+df.to_csv('Industrial_Dirty_Data_10k.csv', index=False)
+print("Data set created successfully: Industrial_Dirty_Data_10k.csv")
