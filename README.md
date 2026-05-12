@@ -52,7 +52,7 @@ Shift-based performance fluctuated within a narrow range of 69-71%, the evening 
 
 Distribution of OEE between 64-72% per machine with 20% of machines performing below average, supported the conclusion that the problem stemmed from planning and capacity utilization. This situation demonstrates that a consistent but low level of efficiency prevailed throughout the operation and the root cause should be made in systemic planning processes.
 
-<img width="454" height="207" alt="image" src="https://github.com/user-attachments/assets/86101192-abaa-4823-b87c-169a10f1f832" />
+<img width="939" height="436" alt="image" src="https://github.com/user-attachments/assets/8c4e0fc3-69b1-4cbe-a887-709e3faa6a3a" />
 
 ### 2. Quality Performance Analytics 
 The quality overview clearly revealed a structural breakdown in the process: a pass rate remaining at 39%, a fail rate exceeding the success rate at 40% and a pending rate of 20% indicated a serious systemic breakdown in the quality control flow.
@@ -61,14 +61,14 @@ Defect rates of 2–3% per machine. Especially the fact that MAC-20, MAC-22, MAC
 
 Total annual quality cost reaching $2.1 million, equivalent to approximately 2.1% of revenue, emphasized the need to address the financial impact of quality problems at a strategic level.
 
-<img width="454" height="211" alt="image" src="https://github.com/user-attachments/assets/021775ce-6770-487d-ba50-d8980a34694d" />
+<img width="939" height="436" alt="image" src="https://github.com/user-attachments/assets/b572aac2-d0a0-4f75-aa39-76f481eb9a92" />
 
 ### 3. Technical Reliability and Sensor Diagnostics 
 Maintenance data clearly revealed a structural challenge in equipment health: 51% of machines required maintenance and 34% of operations experienced downtime, coupled with an average of 5 minutes of consistent downtime, indicating a significant impact on operational continuity.
 
 Positive picture was observed with very low deviations in temperature measurements from the machine sensor while the E01 error code was the most frequent problem, occurring in 40% of cases. Furthermore, the inability of the machine sensors to predict failures with near-zero correlation values ​​(vibration 0.01–0.04, temperature -0.01–-0.04) revealed the unreliability of the current sensor monitoring infrastructure. This situation indicates the need to redefine calibration thresholds in maintenance processes and to conduct comprehensive equipment inspections for mechanical or electrical failure modes that cannot be detected by the sensors.
 
-<img width="454" height="213" alt="image" src="https://github.com/user-attachments/assets/81995e06-13d9-4685-af48-b48651aebd1f" />
+<img width="939" height="436" alt="image" src="https://github.com/user-attachments/assets/f2ebbbf1-753f-4ab6-90db-6c13e42ec467" />
 
  ### 4. Logistics and Warehouse Analytics 
 Supply chain performance showed healthy portfolio diversification with product distribution evenly distributed among four products (25%) while the concentration of 70% of sales in Germany indicated a distinctly European-centric market.
@@ -77,7 +77,7 @@ Warehouse utilization showed Zone A having the highest occupancy rate at 40%, wi
 
 Consistent lead time performance of 15–16 days across all transport methods confirmed process maturity while the inventory turnover rate of 0.66, well below the optimal range (4–10), revealed that stocks were held for longer than necessary and capital efficiency was decreasing. This situation highlighted the need for optimization in demand forecasting and production planning as a strategic priority.
 
-<img width="454" height="214" alt="image" src="https://github.com/user-attachments/assets/e44a8d7f-81ac-4fca-b0e9-0b7ec057dea0" />
+<img width="939" height="436" alt="image" src="https://github.com/user-attachments/assets/77664b24-7f82-4229-86e1-4ab67ce05bf6" />
 
 ## BUSINESS RECOMMENDATIONS 
 | Priority | Operation | Recommendations |
