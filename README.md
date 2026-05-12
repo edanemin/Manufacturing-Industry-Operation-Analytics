@@ -89,7 +89,7 @@ Consistent lead time performance of 15–16 days across all transport methods co
  | **5** | **Executive** |• **Foster a culture of continuous improvement and sustainable performance growth through monthly performance reviews and goal-setting practices to align with stakeholders.** | 
 
 ## TECH SKILLS
-**Excel:** IFS, average formulas
+**Google Sheets:** IFS, average formulas
 <br>**SQL:** Aggregate functions
 <br>**Python:** Missing rows calculation, filter rows
 <br>**Tableau:** Calculated fields, dashboard actions
