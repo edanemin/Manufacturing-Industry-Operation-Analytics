@@ -91,7 +91,7 @@ Consistent lead time performance of 15–16 days across all transport methods co
 ## TECH SKILLS
 **Google Sheets:** IFS, average formulas
 <br>**SQL:** Aggregate functions
-<br>**Python:** Missing rows calculation, filter rows
+<br>**Python:** Pandas, missing rows calculation, filter rows
 <br>**Tableau:** Calculated fields, dashboard actions
 
 
