@@ -28,12 +28,12 @@ The project delivers a dashboard that synthesizes **11 North Star metrics** with
 
  > **Data Limitations:** Due to random generation, some unrealistic patterns exist, such as machine performance exceeding 100%.
 > 
-### Project Resources 
-* [Interactive Tableau Dashboard](https://public.tableau.com/app/profile/eda.emin/viz/ManufacturingIndustryAnalytics/ExecutiveDashboard#1)
-* [Python Code for Data Generation](https://github.com/edanemin/Manufacturing-Industry-Operation-Analytics/blob/main/python/Dataset%20creation) 
-* [Data Quality Enhancements & Summary](https://github.com/edanemin/Manufacturing-Industry-Operation-Analytics/blob/main/sheets/Data%20Quality%20Summary.xlsx)
-* [Descriptive Statistics](https://github.com/edanemin/Manufacturing-Industry-Operation-Analytics/blob/main/sheets/Descriptive%20Statistics.xlsx) 
-* [SQL Queries for Data Manipulation](https://github.com/edanemin/Manufacturing-Industry-Operation-Analytics/tree/main/sql)
+### Methodology and Project Resources 
+**1)** Python Code for data generation is available [here.](https://github.com/edanemin/Manufacturing-Industry-Operation-Analytics/blob/main/python/Dataset%20creation) 
+<br>**2)** Data Quality enhancements & summary is available [here.](https://github.com/edanemin/Manufacturing-Industry-Operation-Analytics/blob/main/sheets/Data%20Quality%20Summary.xlsx) 
+<br>**3)** Descriptive statistics for the dataset is available [here.](https://github.com/edanemin/Manufacturing-Industry-Operation-Analytics/blob/main/sheets/Descriptive%20Statistics.xlsx) 
+<br>**4)** SQL queries for identifying outliers(IOR Method) is available [here.](https://github.com/edanemin/Manufacturing-Industry-Operation-Analytics/tree/main/sql)
+<br>**5)** Interactive Tableau dashboard is available [here.](https://public.tableau.com/app/profile/eda.emin/viz/ManufacturingIndustryAnalytics/ExecutiveDashboard#1)
   
  ## EXECUTIVE SUMMARY  
 Manufacturing operations demonstrate stable but suboptimal performance across most metrics, with a **critical quality crisis** requiring immediate intervention.
@@ -88,5 +88,9 @@ Consistent lead time performance of 15–16 days across all transport methods co
  | **4** | **Supply Chain** |• Optimize inventory turnover rate with increasing the turnover rate from 0.7 to 4 (minimum) by improving demand forecasting and adjusting safety stock levels.<br>• **Consolidate underutilized warehouse zones and optimize material handling** to reduce warehouse operational costs.<br>• Product distribution 70/30 between Germany and the United States demonstrates a reliance on one region, thereby elevating risk exposure. **Refine your regional strategy in alignment with emerging growth prospects.** | 
  | **5** | **Executive** |• **Foster a culture of continuous improvement and sustainable performance growth through monthly performance reviews and goal-setting practices to align with stakeholders.** | 
 
+## TECH SKILLS
+**SQL:** Aggregate functions
+<br>**Python:** Missing rows calculation, filter rows
+<br>**Tableau:** Calculated fields, dashboard actions
 
 
